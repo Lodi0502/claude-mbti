@@ -13,8 +13,8 @@ export function LoadingScreen({ onDone, minDurationMs = 900 }: LoadingScreenProp
 
   return (
     <div className="screen loading-screen">
-      <div className="loading-spinner" aria-hidden="true" />
-      <p>당신의 유형을 분석하는 중...</p>
+      <p className="loading-text">당신의 유형을 분석하는 중</p>
+      <div className="loading-rule" aria-hidden="true" />
     </div>
   );
 }

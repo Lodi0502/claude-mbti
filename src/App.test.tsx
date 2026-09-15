@@ -13,7 +13,7 @@ describe("App", () => {
     const user = userEvent.setup();
     render(<App />);
 
-    expect(screen.getByText("MBTI 성격 유형 테스트")).toBeInTheDocument();
+    expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent("MBTI");
 
     await user.click(screen.getByRole("button", { name: "테스트 시작하기" }));
 

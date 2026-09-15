@@ -68,39 +68,37 @@ export function ResultScreen({ content, distribution, onViewStats, onRestart }: 
   return (
     <div className="screen result-screen">
       <div className="result-card" ref={cardRef}>
+        <p className="result-eyebrow">
+          <span className="result-emoji" aria-hidden="true">
+            {content.emoji}
+          </span>
+          RESULT
+        </p>
         <p className="result-code">{content.code}</p>
-        <h2 className="result-nickname">
-          <span aria-hidden="true">{content.emoji}</span> {content.nickname}
-        </h2>
+        <h2 className="result-nickname">{content.nickname}</h2>
         <p className="result-summary">{content.summary}</p>
 
         <section className="result-section">
           <h3>강점</h3>
-          <ul>
+          <ul className="trait-list">
             {content.strengths.map((item) => (
-              <li key={item}>👍 {item}</li>
+              <li key={item}>{item}</li>
             ))}
           </ul>
         </section>
 
         <section className="result-section">
           <h3>약점</h3>
-          <ul>
+          <ul className="trait-list">
             {content.weaknesses.map((item) => (
-              <li key={item}>⚠️ {item}</li>
+              <li key={item}>{item}</li>
             ))}
           </ul>
         </section>
 
         <section className="result-section">
           <h3>추천 직업</h3>
-          <div className="job-tags">
-            {content.recommendedJobs.map((job) => (
-              <span key={job} className="job-tag">
-                {job}
-              </span>
-            ))}
-          </div>
+          <p className="job-list">{content.recommendedJobs.join("  ·  ")}</p>
         </section>
       </div>
 
@@ -119,13 +117,13 @@ export function ResultScreen({ content, distribution, onViewStats, onRestart }: 
 
       <div className="result-actions">
         <button type="button" className="btn btn-secondary" onClick={handleSaveImage}>
-          {imageSaved ? "✓ 저장됨" : "🖼 이미지 저장"}
+          {imageSaved ? "저장됨 ✓" : "이미지 저장"}
         </button>
         <button type="button" className="btn btn-secondary" onClick={handleShareKakao}>
-          💬 카카오톡 공유
+          카카오톡 공유
         </button>
         <button type="button" className="btn btn-secondary" onClick={handleCopyLink}>
-          🔗 링크 복사
+          링크 복사
         </button>
       </div>
       <button type="button" className="link-button" onClick={onRestart}>

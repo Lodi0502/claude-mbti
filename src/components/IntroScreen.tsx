@@ -7,10 +7,12 @@ interface IntroScreenProps {
 export function IntroScreen({ totalParticipants, onStart, onViewStats }: IntroScreenProps) {
   return (
     <div className="screen intro-screen">
-      <div className="intro-visual" aria-hidden="true">
-        🧭
-      </div>
-      <h1 className="intro-title">MBTI 성격 유형 테스트</h1>
+      <p className="eyebrow">PERSONALITY TEST · No. 16</p>
+      <h1 className="intro-title">
+        MBTI
+        <br />
+        성격 유형 테스트
+      </h1>
       <p className="intro-tagline">
         12개의 질문, 3분이면 알 수 있는 나의 성격 유형 — 결과를 친구에게 공유하고 비교해보세요.
       </p>

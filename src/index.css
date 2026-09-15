@@ -1,18 +1,43 @@
 :root {
   color-scheme: light;
-  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* 잡지 에디토리얼 톤: 오프화이트 지면 + 잉크 블랙 + 파스텔 옐로우 포인트 */
+  --color-bg: #f7f4ec;
+  --color-panel: #f1ecdc;
+  --color-ink: #17150f;
+  --color-ink-soft: #6b6454;
+  --color-line: rgba(23, 21, 15, 0.16);
+  --color-line-strong: rgba(23, 21, 15, 0.85);
+  --color-yellow: #f3d94e;
+  --color-yellow-soft: #f8e79a;
+
+  --font-sans:
+    "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+
+  font-family: var(--font-sans);
 }
 
 * {
   box-sizing: border-box;
 }
 
+html {
+  background: var(--color-bg);
+}
+
 body {
   margin: 0;
-  background: #fbf7ff;
-  color: #2a2438;
+  background: var(--color-bg);
+  color: var(--color-ink);
 }
 
 button {
   font-family: inherit;
+  color: inherit;
+}
+
+::selection {
+  background: var(--color-yellow);
+  color: var(--color-ink);
 }

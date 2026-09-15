@@ -50,10 +50,11 @@ export function QuestionScreen({
         <ProgressBar current={questionNumber} total={totalQuestions} />
       </div>
 
+      <p className="question-eyebrow">Q{questionNumber}</p>
       <p className="question-text">{question.text}</p>
 
       <div className="question-options">
-        {question.options.map((option) => (
+        {question.options.map((option, index) => (
           <button
             key={option.id}
             type="button"
@@ -61,7 +62,10 @@ export function QuestionScreen({
             onClick={() => handleSelect(option)}
             disabled={selectedId !== null}
           >
-            <span>{option.text}</span>
+            <span className="option-mark" aria-hidden="true">
+              {index === 0 ? "A" : "B"}
+            </span>
+            <span className="option-text">{option.text}</span>
             {highlightedId === option.id && (
               <span className="option-check" aria-hidden="true">
                 ✓
